@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 
-declare var $:any;
+//declare var $:any;
+
+//declare var alertify:any;
+
 
 @Component({
   selector: 'app-root',
@@ -13,11 +16,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(){
 
-    $(document).ready(function(){
 
-        alert("hello");
-
-    })
 
   }
 
