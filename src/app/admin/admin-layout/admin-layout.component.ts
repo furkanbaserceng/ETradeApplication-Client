@@ -17,7 +17,13 @@ export class AdminLayoutComponent implements OnInit{
 
   }
   ngOnInit(): void {
-    this.alertifyService.message("Admin Layout- Hoşgeldiniz",MessageType.Success,AlertifyPosition.TopLeft,1);
+    this.alertifyService.message("Admin Layout- Hoşgeldiniz",{
+
+      messageType:MessageType.Success,
+      position:AlertifyPosition.TopCenter,
+      delay:5
+
+    });
   }
 
 

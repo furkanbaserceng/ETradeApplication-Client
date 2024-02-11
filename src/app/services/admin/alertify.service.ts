@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AlertifyPosition } from 'src/app/enums/alertify/alertify-position';
 import { MessageType } from 'src/app/enums/alertify/message-type';
+import { AlertifyOptions } from 'src/app/options/alertify/alertify-options';
 
 declare var alertify:any;
 
@@ -12,11 +13,11 @@ export class AlertifyService {
 
   constructor() { }
 
-  message(message:string,messageType:MessageType,position:AlertifyPosition,delay:number=5){
+  message(message:string,options:Partial<AlertifyOptions>){
 
-    alertify.set('notifier','delay',delay);
-    alertify.set('notifier','position',position);
-    alertify[messageType](message);
+    alertify.set('notifier','delay',options.delay);
+    alertify.set('notifier','position',options.position);
+    alertify[options.messageType](message);
 
   }
 
