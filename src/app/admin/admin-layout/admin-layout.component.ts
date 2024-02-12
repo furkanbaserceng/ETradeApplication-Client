@@ -11,19 +11,13 @@ import { AlertifyService } from 'src/app/services/admin/alertify.service';
 export class AdminLayoutComponent implements OnInit{
 
 
-  constructor(private alertifyService:AlertifyService){
+  constructor(){
 
   
 
   }
   ngOnInit(): void {
-    this.alertifyService.message("Admin Layout- Hoşgeldiniz",{
-
-      messageType:MessageType.Success,
-      position:AlertifyPosition.TopCenter,
-      delay:5
-
-    });
+   
   }
 
 

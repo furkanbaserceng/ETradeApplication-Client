@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 
 //declare var $:any;
@@ -13,10 +14,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'ETradeClient';
-
+  constructor(private toastrService:ToastrService){}
   ngOnInit(){
 
-
+    this.toastrService.success("Hoşgeldiniz!","Giriş Başarılı!");
 
   }
 
