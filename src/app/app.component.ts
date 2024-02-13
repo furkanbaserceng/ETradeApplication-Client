@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { BaseComponent } from './base/base-component';
+import { SpinnerTypeName } from './enums/spinner/spinner-type-name';
 
 
 //declare var $:any;
@@ -12,15 +14,14 @@ import { NgxSpinnerService } from 'ngx-spinner';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent extends BaseComponent implements OnInit {
   title = 'ETradeClient';
-  constructor(private spinner:NgxSpinnerService){}
+  constructor(spinner:NgxSpinnerService){
+    super(spinner);
+  }
   ngOnInit(){
 
-    this.spinner.show();
-    setTimeout(() => {
-      this.spinner.hide();
-    }, 5000);
+    this.showSpinner(SpinnerTypeName.BallAtom);
 
   }
 
