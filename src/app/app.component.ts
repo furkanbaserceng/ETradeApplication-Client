@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomToastrService } from './services/ui/custom-toastr.service';
-import { MessageType } from './enums/alertify/message-type';
-import { ToastrMessageType } from './enums/toastr/toastr-message-type';
-import { ToastrPosition } from './enums/toastr/toastr-position';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 //declare var $:any;
@@ -17,13 +14,13 @@ import { ToastrPosition } from './enums/toastr/toastr-position';
 })
 export class AppComponent implements OnInit {
   title = 'ETradeClient';
-  constructor(private toastrService:CustomToastrService){}
+  constructor(private spinner:NgxSpinnerService){}
   ngOnInit(){
 
-    this.toastrService.message("Hoşgeldiniz","Giriş Başarılı!",{
-      messageType:ToastrMessageType.Info,
-      position:ToastrPosition.BottomLeft
-    })
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 5000);
 
   }
 
