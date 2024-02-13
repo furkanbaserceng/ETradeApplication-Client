@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
+import { CustomToastrService } from './services/ui/custom-toastr.service';
+import { MessageType } from './enums/alertify/message-type';
+import { ToastrMessageType } from './enums/toastr/toastr-message-type';
+import { ToastrPosition } from './enums/toastr/toastr-position';
 
 
 //declare var $:any;
@@ -14,10 +17,13 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AppComponent implements OnInit {
   title = 'ETradeClient';
-  constructor(private toastrService:ToastrService){}
+  constructor(private toastrService:CustomToastrService){}
   ngOnInit(){
 
-    this.toastrService.success("Hoşgeldiniz!","Giriş Başarılı!");
+    this.toastrService.message("Hoşgeldiniz","Giriş Başarılı!",{
+      messageType:ToastrMessageType.Info,
+      position:ToastrPosition.BottomLeft
+    })
 
   }
 
