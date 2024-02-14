@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgxSpinnerService } from 'ngx-spinner';
-import { BaseComponent } from './base/base-component';
-import { SpinnerTypeName } from './enums/spinner/spinner-type-name';
 
-
-//declare var $:any;
-
-//declare var alertify:any;
+declare var $:any;
 
 
 @Component({
@@ -14,14 +8,15 @@ import { SpinnerTypeName } from './enums/spinner/spinner-type-name';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent extends BaseComponent implements OnInit {
+export class AppComponent implements OnInit {
   title = 'ETradeClient';
-  constructor(spinner:NgxSpinnerService){
-    super(spinner);
-  }
+  
+  
   ngOnInit(){
 
-    this.showSpinner(SpinnerTypeName.BallAtom);
+   $.get("https://localhost:7168/api/products",data=>{
+    console.log(data);
+   })
 
   }
 
