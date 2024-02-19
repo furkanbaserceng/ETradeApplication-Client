@@ -14,10 +14,7 @@ export class AppComponent implements OnInit {
   
   ngOnInit(){
 
-   $.get("https://localhost:7168/api/products",data=>{
-    console.log(data);
-   })
-
+   
   }
 
 }
