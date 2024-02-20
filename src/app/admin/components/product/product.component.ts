@@ -12,17 +12,17 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void { 
     
-    this.customHttpService.get({
-      controller:"products"
-    }).subscribe(data=>{
-      console.log(data);
-    })
+    // this.customHttpService.get({
+    //   controller:"products"
+    // }).subscribe(data=>{
+    //   console.log(data);
+    // })
 
-    this.customHttpService.get({
-      controller:"products"
-    },"45452d86-8bbe-4697-87ee-365afbd18909").subscribe(data=>{
-      console.log(data);
-    })
+    // this.customHttpService.get({
+    //   controller:"products"
+    // },"45452d86-8bbe-4697-87ee-365afbd18909").subscribe(data=>{
+    //   console.log(data);
+    // })
 
     // this.customHttpService.post({
     //   controller:"products"
@@ -46,11 +46,11 @@ export class ProductComponent implements OnInit {
     //   controller:"products"
     // },"7c68c37b-d7eb-43a5-931e-2a3581b28a18").subscribe();
 
-    this.customHttpService.get({
-      fullEndPoint:"https://dummyjson.com/comments"
-    }).subscribe(data=>{
-      console.log(data);
-    });
+    // this.customHttpService.get({
+    //   fullEndPoint:"https://dummyjson.com/comments"
+    // }).subscribe(data=>{
+    //   console.log(data);
+    // });
 
   }
 

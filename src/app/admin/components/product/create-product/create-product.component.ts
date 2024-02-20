@@ -40,10 +40,19 @@ export class CreateProductComponent extends BaseComponent implements OnInit{
        this.alertifyService.message("Ürün Başarıyla eklendi",{
         messageType:MessageType.Success,
         position:AlertifyPosition.TopRight,
-        delay:500
-       })
+        delay:5
+       });
 
-    });
+    },errorMessage=>{
+
+      this.alertifyService.message(errorMessage,{
+        position:AlertifyPosition.TopRight,
+        messageType:MessageType.Error,
+        delay:5
+      })
+
+
+    })
 
   }
 
